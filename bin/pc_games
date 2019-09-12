@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+PcGames::CLI.new.call
