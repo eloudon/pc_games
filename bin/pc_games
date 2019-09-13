@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
+require "./lib/pc_games"
+
 PcGames::CLI.new.call

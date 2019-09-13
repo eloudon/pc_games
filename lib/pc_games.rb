@@ -1,6 +1,2 @@
-require "pc_games/version"
-
-module PcGames
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require_relative "pc_games/version"
+require_relative "./pc_games/cli"
