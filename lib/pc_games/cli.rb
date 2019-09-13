@@ -16,7 +16,7 @@ class PcGames::CLI
   end
 
 def describe
-  puts "Select a game you would like to hear more about by entering it's number:"
+  puts "Enter the number of the game you would like to read more about or top to see the list again or exit:"
   input = nil
   while input != "exit"
   input = gets.strip
@@ -27,6 +27,10 @@ when "2"
   puts "describe dark souls"
 when "3"
   puts "describe MHW"
+when "top"
+  top_three
+else
+  puts "Took a wrong turn? Type top or exit."
   end
  end
 end
