@@ -1,38 +1,38 @@
 class PcGames::CLI
 
   def call
-    top_three
-    url
+    tournaments
+    info
     goodbye
   end
 
-  def top_three
-    puts "PCmag's current recommended strategy games are:"
-    @games = PcGames::Game.rank
-    @games.each.with_index(1) do |game, i|
-      puts "#{i}, #{game.name} - #{game.price}"
+  def tournaments
+    puts "Upcoming Premier Starcraft 2 tournaments:"
+    @tournaments = PcGames::Game.upcoming
+    @tournaments.each.with_index(1) do |tournament, i|
+      puts "#{i}, #{tournament.name}"
     end
   end
 
-def url
-  puts "Enter the number of the game you might be interested in purchasing or type top or exit:"
+def info
+  puts "Select a tournament for more info or type list to see all tournaments or exit:"
   input = nil
   while input != "exit"
   input = gets.strip
 
   if input.to_i > 0
-    the_game = @games[input.to_i-1]
-    puts "#{the_game.name} - #{the_game.price} - #{the_game.url}"
-  elsif input == "top"
-    top_three
+    the_tournament = @tournaments[input.to_i-1]
+    puts "#{the_tournament.name} - Location:#{the_tournament.location} - Start date: #{the_tournament.date} - Prize pool: #{the_tournament.prize_pool}"
+  elsif input == "list"
+    tournaments
 else
-  puts "Not sure? Type top or exit."
+  puts "Take a wrong turn? Type list or exit."
   end
  end
 end
 
 def goodbye
-  puts "Don't forget to check back when rankings change!"
+  puts "Don't forget to check back to see upcoming tournaments!"
  end
 
  end
