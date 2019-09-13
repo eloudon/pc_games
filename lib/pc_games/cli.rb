@@ -1,20 +1,20 @@
 class PcGames::CLI
 
   def call
-    puts "Techradar's Top 3 PC games are:"
     top_three
-    describe
+    url
     goodbye
   end
 
   def top_three
-    @games = PcGames::Game.all
+    puts "Techradar's Top 3 PC games are:"
+    @games = PcGames::Game.rank
     @games.each.with_index(1) do |game, i|
       puts "#{i}, #{game.name} - #{game.price}"
     end
   end
 
-def describe
+def url
   puts "Enter the number of the game you're are interested in purchasing or type top or exit:"
   input = nil
   while input != "exit"
