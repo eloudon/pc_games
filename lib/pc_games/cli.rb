@@ -8,11 +8,10 @@ class PcGames::CLI
   end
 
   def top_three
-    puts <<-DOC
-    1. The Witcher 3
-    2. Dark Souls 3
-    3. Monster Hunter World
-    DOC
+    @games = PcGames::Game.all
+    @games.each.with_index(1) do |game, i|
+      puts "#{i}, #{game.name} - #{game.price}"
+    end
   end
 
 def describe
@@ -20,15 +19,11 @@ def describe
   input = nil
   while input != "exit"
   input = gets.strip
-  case input
-when "1"
-  puts "describe the witcher"
-when "2"
-  puts "describe dark souls"
-when "3"
-  puts "describe MHW"
-when "top"
-  top_three
+
+  if input.to_i > 0
+    puts @games[input.to_i-1]
+  elsif input == "top"
+    top_three
 else
   puts "Took a wrong turn? Type top or exit."
   end
