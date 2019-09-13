@@ -1,8 +1,6 @@
 # PcGames
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pc_games`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+PcGames will list upcoming premier tier starcraft 2 tournaments and provide additional tournament information  user request.
 
 ## Installation
 
@@ -22,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+./bin/pc_games to run the program
+
+Entering 1 or 2 in the terminal should return the additonal information about the listed tournaments.
+
+list - reprints the list of tournaments
+exit - exits the program
 
 ## Development
 
