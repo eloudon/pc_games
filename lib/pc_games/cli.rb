@@ -15,23 +15,24 @@ class PcGames::CLI
   end
 
 def describe
-  puts "Enter the number of the game you would like to read more about or top to see the list again or exit:"
+  puts "Enter the number of the game you're are interested in purchasing or type top or exit:"
   input = nil
   while input != "exit"
   input = gets.strip
 
   if input.to_i > 0
-    puts @games[input.to_i-1]
+    the_game = @games[input.to_i-1]
+    puts "#{the_game.name} - #{the_game.price} - #{the_game.url}"
   elsif input == "top"
     top_three
 else
-  puts "Took a wrong turn? Type top or exit."
+  puts "Not sure? Type top or exit."
   end
  end
 end
 
 def goodbye
-  puts "Don't forget to check in to see when rankings change!"
+  puts "Don't forget to check back when rankings change!"
  end
 
  end
