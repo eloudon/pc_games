@@ -7,7 +7,7 @@ class PcGames::CLI
   end
 
   def top_three
-    puts "Techradar's Top 3 PC games are:"
+    puts "PCmag's current recommended strategy games are:"
     @games = PcGames::Game.rank
     @games.each.with_index(1) do |game, i|
       puts "#{i}, #{game.name} - #{game.price}"
@@ -15,7 +15,7 @@ class PcGames::CLI
   end
 
 def url
-  puts "Enter the number of the game you're are interested in purchasing or type top or exit:"
+  puts "Enter the number of the game you might be interested in purchasing or type top or exit:"
   input = nil
   while input != "exit"
   input = gets.strip

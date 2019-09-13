@@ -1,20 +1,27 @@
 class PcGames::Game
-attr_accessor :name, :price, :url
+  attr_accessor :name, :price, :url
 
   def self.rank
-    self.scape_games
+    self.scrape_games
   end
 
- def scape_games
-  games = []
-  games << self.scape_tech
+  def self.scrape_games
+    games = []
+   games << self.scrape_pc
   games
- end
+  end
+
+  def self.scrape_pc
+    doc = Nokogiri::HTML(open("https://uk.pcmag.com/features/77195/the-best-pc-games"))
+
+    binding.pry
+
+    game_1 = self.new
+    game_1.name =
+    game_1.price =
+    game_1.url =
 
 
- def self.scrape_tech
-   doc = Nokogiri::HTML(open(https://techradar.com/uk/news/best-pc-games))
-binding.pry
- end
-
+    game
+  end
 end
