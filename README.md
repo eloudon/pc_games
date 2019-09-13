@@ -24,7 +24,7 @@ Or install it yourself as:
 
 Entering 1 or 2 in the terminal should return the additonal information about the listed tournaments.
 
-list - reprints the list of tournaments
+list - reprints the list of tournaments,
 exit - exits the program
 
 ## Development
